@@ -10,7 +10,8 @@
       $(".slides-roof").backstretch([
          "images/roof1.png",
          "images/roof2.png",
-         "images/roof3.png"
+         "images/roof3.png",
+         "images/roof4.png"
         ],{duration:3000,fade:750});
 
       $(".slides-asteroids").backstretch([
@@ -139,8 +140,20 @@
 
   .side-bar h1{
     margin-top:80px;
-    margin-bottom:20px;
     font-size:40px;
+  }
+
+  .side-bar h3{
+    margin-top:0px;
+    color:rgb(195, 219, 255);
+  }
+
+  .side-bar h3:hover{
+    color:rgb(218, 232, 253);
+  }
+
+  .side-bar h3:hover{
+    cursor:pointer;
   }
 
   .for-home{
@@ -261,6 +274,7 @@
   .projects{
     width:77%;
     margin:auto;
+    margin-bottom:30px;
   }
 
   .projects li{
@@ -414,7 +428,8 @@
 
 <div class="side-bar">
   <div class="for-home"><img src="images/home.png"> <img src="images/home2.png"></div>
-  <h1>Jorge Medrano</h1>
+  <h1><a href="mailto:jamedranoa@unal.edu.co">Jorge Medrano</a></h1>
+  <h3>jamedranoa@unal.edu.co</h3>
   <img id="my-pic" src="images/me.jpg">
   <ul class="links group">
     <li><a href="mailto:jamedranoa@unal.edu.co"><img src="images/mail.png"></a></li>
@@ -432,6 +447,8 @@
     <li id="for-asteroids" class="selectable"><img src="images/asteroids1.png"><h2>Asteroids</h2></li>
     <li id="for-checkers" class="selectable"><img src="images/Checkers.png"><h2>Checkers</h2></li>
   </ul>
+
+  <h6>&copy;2014 Jorge Medrano.</h6>
 
 </div>
 
