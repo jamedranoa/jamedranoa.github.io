@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.backstretch.min.js"></script>
+  <script src="js/pdfobject_source.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $(".slides-roof").backstretch([
+         "images/roof1.png",
+         "images/roof2.png",
+         "images/roof3.png"
+        ],{duration:3000,fade:750});
+
+      $(".slides-asteroids").backstretch([
+          "images/asteroids1.png",
+          "images/asteroids3.png",
+          "images/asteroids4.png"
+        ],{duration:3000,fade:750});
+
+      $(".slides-checkers").backstretch([
+          "images/checkers1.png",
+          "images/checkers3.png",
+          "images/checkers4.png",
+          "images/checkers5.png"
+        ],{duration:3000,fade:750});
+
+        $(".for-home").on("click", function(event){
+          $(".for-show").addClass("hidden");
+          $(".selectable").removeClass("in-action")
+          $("#home").removeClass("hidden")
+        })
+
+      $("#for-resume").on("click", function (event) {
+        $(".for-show").addClass("hidden");
+        $(".selectable").removeClass("in-action")
+        $("#for-resume").addClass("in-action")
+        $("#resume").removeClass("hidden");
+      });
+
+      $("#for-projects").on("click", function (event) {
+        $("#for-projects").toggleClass("in-action")
+        $(".projects").toggleClass("hidden");
+      });
+
+      $("#for-roof").on("click", function (event) {
+        $(".for-show").addClass("hidden");
+        $(".selectable").removeClass("in-action")
+        $("#for-roof").addClass("in-action")
+        $("#roof").removeClass("hidden");
+      });
+
+      $("#for-checkers").on("click", function (event) {
+        $(".for-show").addClass("hidden")
+        $(".selectable").removeClass("in-action")
+        $("#for-checkers").addClass("in-action")
+        $("#checkers").removeClass("hidden");
+      });
+
+      $("#for-asteroids").on("click", function (event) {
+        $(".for-show").addClass("hidden")
+        $(".selectable").removeClass("in-action")
+        $("#for-asteroids").addClass("in-action")
+        $("#asteroids").removeClass("hidden");
+      });
+    })
+  </script>
+
+  <script type='text/javascript'>
+
+    function embedPDF(){
+
+      var myPDF = new PDFObject({
+
+        url: 'JorgeMedrano-Resume.pdf',
+        pdfOpenParams: { zoom: '200px' }
+
+      }).embed('resume');
+
+    }
+
+    window.onload = embedPDF;
+
+  </script>
+
+  <style>
+  html, body, header, h1, h2, nav, ul, li, a, footer, small {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  /* --- Set basic html elements --- */
+
+  body {
+    font-family: sans-serif;
+    background: #eee;
+    color: #333;
+    overflow-y:hidden;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .group:after{
+    content:"";
+    clear:both;
+    display:block;
+  }
+
+  li.in-action{
+    background:rgb(237, 238, 243);
+    color:black;
+    border:1px solid black;
+  }
+
+
+
+  .side-bar{
+    position:fixed;
+    top:0;
+    right:0;
+    background:black;
+    height:100%;
+    width:30%;
+    overflow-y:auto;
+    text-align:center;
+    color:white;
+  }
+
+  .side-bar h1{
+    margin-top:80px;
+    margin-bottom:20px;
+    font-size:40px;
+  }
+
+  .for-home{
+    position:absolute;
+    top:0;
+    left:5px;
+    border-radius:10px;
+    border:2px solid white;
+
+  }
+
+  .for-home img{
+    height:50px;
+  }
+
+  .for-home img:last-child{
+    display:none;
+  }
+
+  .for-home:hover{
+    cursor:pointer;
+    background:gray;
+  }
+
+
+  #my-pic{
+    display:block;
+    height:180px;
+    border-radius:100px;
+    margin:auto;
+    margin-bottom:20px;
+  }
+
+
+
+  #mail:hover{
+    color:rgb(82, 160, 154);
+    margin-bottom:20px;
+  }
+  #mail{
+    border:1px solid red;
+  }
+
+  .links{
+    display:block;
+    height:70px;
+    max-width:198px;
+    margin:auto;
+    margin-bottom:10px;
+  }
+
+  .links li{
+    float:left;
+    border:1px solid white;
+    border-radius:10px;
+    width:50px;
+    margin-left:20px;
+  }
+
+  @media(max-width:800px){
+    .links{
+      display:block;
+      height:70px;
+      max-width:52px;
+      margin:auto;
+    }
+    .links li{
+      float:left;
+      border:1px solid white;
+      width:50px;
+      margin-left:0px;
+    }
+
+    .links li:last-child{
+      margin-right:80px;
+    }
+  }
+
+  .links li:first-child{
+    margin-left:0px;
+  }
+  .links li:hover{
+    background:gray;
+    cursor:pointer;
+  }
+  .links li img{
+    height:50px;
+  }
+  .info{
+    width:50%;
+    min-width:70px;
+    margin:auto;
+    display:block;
+    margin-bottom: 10px;
+  }
+  .info li{
+    border-radius:5px;
+    font-weight:bold;
+    height:80px;
+    line-height:80px;
+    overflow-x:hidden;
+    display:block;
+    border:1px solid white;
+  }
+
+  .info li:first-child{
+    margin-bottom:30px;
+  }
+
+  .info li:hover{
+    background:rgb(237, 238, 243);
+    color:black;
+    cursor:pointer;
+  }
+
+
+
+  .projects{
+    width:77%;
+    margin:auto;
+  }
+
+  .projects li{
+    border-radius:5px;
+    overflow-y:hidden;
+    height:100px;
+    line-height:100px;
+    font-weight:bold;
+    border:1px solid white;
+  }
+
+  .projects li img{
+    display:block;
+    float:left;
+    margin-left:20px;
+    height:80%;
+    min-width:150px;
+    margin-right:0px;
+    margin-top:7px;
+    border:4px solid black;
+  }
+
+  .projects li h2{
+    width:100px;
+    float:right;
+    margin-left:30px;
+    text-align:left;
+  }
+
+  .projects li:hover{
+    background:rgb(237, 238, 243);
+    color:black;
+    cursor:pointer;
+  }
+
+  .content{
+    position:fixed;
+    width:70%;
+    height:100%;
+    overflow-y:scroll;
+  }
+
+  article{
+    width:100%;
+    overflow:auto;
+  }
+
+  .slides-roof{
+    margin:auto;
+    margin-top:20px;
+    border:5px solid black;
+    width:978px;
+    height:505px;
+  }
+
+  .slides-asteroids{
+    margin:auto;
+    margin-top:20px;
+    border:5px solid black;
+    width:978px;
+    height:505px;
+  }
+
+  .slides-checkers{
+    margin:auto;
+    margin-top:20px;
+    border:5px solid black;
+    width:978px;
+    height:505px;
+  }
+
+  article h1{
+    font-size:60px;
+    margin:auto;
+    margin-top:20px;
+    text-align:center;
+  }
+
+  article h3{
+    text-align:center;
+    margin-top:0;
+  }
+
+  article a{
+    display:inline-block;
+    color:rgb(114, 114, 194);
+    padding:7px;
+
+  }
+
+  article a:nth-child(2){
+    border-left:2px solid rgb(114, 114, 194);
+  }
+
+  article a:hover{
+    color:rgb(178, 178, 253);
+  }
+
+  article p{
+    width:60%;
+    margin:auto;
+    font-size:20px;
+  }
+
+  .for-features{
+    margin:auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    width:60%;
+  }
+
+  article h2{
+    font-size:40px;
+  }
+
+  .features li{
+    margin-left:20px;
+    margin-top:10px;
+    font-size:20px;
+    list-style-type:disc;
+  }
+
+  .hidden{
+    display:none;
+  }
+
+  .resume{
+    position:fixed;
+    border:1px solid black;
+    width:70%;
+    height:100%;
+    background:white;
+    z-index:1000;
+  }
+
+  #home h1{
+    margin-top:25%;
+    margin-bottom:25px;
+  }
+
+  #home p{
+    text-align:center;
+  }
+
+
+  </style>
+  <title> Jorge Medrano </title>
+</head>
+
+<body>
+
+<div class="side-bar">
+  <div class="for-home"><img src="images/home.png"> <img src="images/home2.png"></div>
+  <h1>Jorge Medrano</h1>
+  <img id="my-pic" src="images/me.jpg">
+  <ul class="links group">
+    <li><a href="mailto:jamedranoa@unal.edu.co"><img src="images/mail.png"></a></li>
+    <li><a href="https://github.com/jamedranoa" target="github"><img src="images/github.png"></a></li>
+    <li><a href="http://www.linkedin.com/in/jamedrano" target="linkedin"><img src="images/linkedin.png"></a></li>
+  </ul>
+
+  <ul class="info">
+    <li id="for-resume" class="selectable">Resume</li>
+    <li id="for-projects">Projects</li>
+  </ul>
+
+  <ul class="projects hidden">
+    <li id="for-roof" class="selectable"><img src="images/roof1.png"><h2>Roof</h2></li>
+    <li id="for-asteroids" class="selectable"><img src="images/asteroids1.png"><h2>Asteroids</h2></li>
+    <li id="for-checkers" class="selectable"><img src="images/Checkers.png"><h2>Checkers</h2></li>
+  </ul>
+
+</div>
+
+<div class="content">
+  <article id="home" class="for-show">
+
+    <h1>Web Developer for Hire! <img src="images/limited.png"></h1>
+    <p>I'm a web developer with experience building Ruby on Rails apps using JavaScript and Backbone.js.
+      While majoring in physics, I took several classes in which I was able to use and improve my
+      programming skills. After graduating, I focused on web development. I love solving problems of any
+      kind, and I am great at working with other people. Also, if your company has a soccer team, I'd
+      love to play as an attacking midfielder. Feel free to review my resume and projects!!
+
+  </article>
+
+<!------------------------Roof-------------------------------------------------------------->
+  <article id="roof" class="for-show hidden">
+    <div class="slides-roof">
+    </div>
+
+    <h1> Roof </h1>
+    <h3><a href="http://jorgemedrano-app.herokuapp.com/" target="roof">Live</a><a href="https://github.com/jamedranoa/Roof" target="roof-git">GitHub</a></h3>
+    <p>Built using <strong>Ruby on Rails</strong>, uses <strong>Backbone.js</strong> views which are appended in different elements of a classic rails view. Uses <strong>Mapbox.js</strong> and <strong>Geocoder</strong> to localize a room, makes a search verifying location and dates availability, The User can make a request on the fly using <strong>jQuery UJS</strong>, When an user accepts a request, automatically reserve the dates of the room and eliminate any overlapping request, own design and style made by "hand" using only <strong>CSS</strong>.</p>
+    <div class="for-features">
+    <h2>Features</h2>
+    <ul class="features">
+      <li>Users can:<ul>
+        <li>search rooms by location and date.</li>
+        <li>manage their profiles.</li>
+        <li>list and edit rooms.</li>
+        <li>request the use of another user's listed room.</li>
+        <li>approve or deny requests of their own listed rooms.</li>
+      </ul></li>
+      <li>Dates available are updated every time a request is approved.</li>
+      <li>Incompatible requests are destroyed at the moment of approval.</li>
+      <li>Places and users are reviewable.</li>
+      <li>Users receive notifications of requests, reviews, approvals, and rejections.</li>
+    </ul>
+
+    </div>
+
+    <div class="for-features">
+    <h2>Technologies</h2>
+    <ul class="features">
+      <li>Photo saving and resizing using <strong>Paperclip and ImageMagick</strong>.</li>
+      <li>Address location using <strong>geocoder</strong>.</li>
+      <li>Location display using <strong>Mapbox's Javascript API</strong>.</li>
+      <li><strong>Backbone.js</strong> views mixed into classic rails views.</li>
+      <li>Polymorphic review model for users and places.</li>
+      <li>Polymorphic notification model.</li>
+      <li>Uses <strong>jQuery UJS</strong> for creating reviews, requests and notificiations on the fly.</li>
+      <li>Pagination using <strong>Kaminari</strong></li>
+    </ul>
+
+    </div>
+  </article>
+<!------------------------Checkers-------------------------------------------------------------->
+  <article id="checkers" class="for-show hidden">
+    <div class="slides-checkers">
+    </div>
+
+    <h1> Checkers </h1>
+    <p>Classic rules of the game implemented in <strong>Ruby</strong>, with clear and organized <strong>Object Oriented Design</strong>.</p>
+  </article>
+  <!------------------------Checkers-------------------------------------------------------------->
+  <article id="asteroids" class="for-show hidden">
+    <div class="slides-asteroids">
+    </div>
+
+    <h1> Asteroids </h1>
+    <h3><a href="http://jamedranoa.github.io/Asteroids/" target="asteroids">Live</a><a href="https://github.com/jamedranoa/Asteroids" target="asteroids-git">GitHub</a></h3>
+    <p>Game built using <strong>JavaScript</strong> and <strong>Canvas</strong>.
+      Follows similar rules to the original game. Clean and organized <strong>object oriented design</strong>.</p>
+
+    <div class="for-features">
+    <h2>Features</h2>
+    <ul class="features">
+      <li><strong>Vector</strong> class to respresent objects' positions and velocities.
+      <ul>
+        <li>Expressed in both <strong>Cartesian Coordinates</strong> and <strong>Polar Coordinates</strong
+        for easy handling</li>
+      </ul>
+      </li>
+      <li>Ship can change direction of acceleration.
+        <ul><li>Acceleration takes into account ship's current velocity.</li></ul>
+      </li>
+      <li>Bullet's initial velocity calculated using the ship as a system of reference.</li>
+    </ul>
+    </div>
+
+  </article>
+</div>
+
+
+
+<!------------------------------------Resume---------------------------------------------------------->
+<div class="resume for-show hidden" id="resume">
+
+</div>
+
+</body>
+
+</html>
