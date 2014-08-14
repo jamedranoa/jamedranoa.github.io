@@ -29,6 +29,10 @@
           "images/asteroids3.png",
           "images/asteroids4.png"
         ],{duration:3000,fade:750});
+        
+      $(".slides-cars").backstretch([
+          "images/cars1.png"
+        ],{duration:3000,fade:750});
 
       $(".slides-checkers").backstretch([
           "images/checkers1.png",
@@ -75,6 +79,14 @@
         $("#for-asteroids").addClass("in-action")
         $("#asteroids").removeClass("hidden");
       });
+      
+      $("#for-cars").on("click", function (event) {
+        $(".for-show").addClass("hidden")
+        $(".selectable").removeClass("in-action")
+        $("#for-cars").addClass("in-action")
+        $("#cars").removeClass("hidden");
+      });
+      
     })
   </script>
 
@@ -347,6 +359,14 @@
     width:978px;
     height:505px;
   }
+  
+  .slides-cars{
+    margin:auto;
+    margin-top:20px;
+    border:5px solid black;
+    width:978px;
+    height:505px;
+  }
 
   .slides-checkers{
     margin:auto;
@@ -456,6 +476,7 @@
   <ul class="projects hidden">
     <li id="for-roof" class="selectable"><img src="images/roof1.png"><h2>Roof</h2></li>
     <li id="for-asteroids" class="selectable"><img src="images/asteroids1.png"><h2>Asteroids</h2></li>
+    <li id="for-cars" class="selectable"><img src="images/cars1.png"><h2>Cars</h2></li>
     <li id="for-checkers" class="selectable"><img src="images/Checkers.png"><h2>Checkers</h2></li>
   </ul>
 
@@ -552,6 +573,30 @@
     </div>
 
   </article>
+  
+<!-----------------------------Cars----------------------------- -->
+    <article id="cars" class="for-show hidden">
+      <div class="slides-cars">
+      </div>
+    
+    <h1> Cars </h1>
+    <h3><a href="http://jamedranoa.github.io/Cars/" target="cars">Live</a><a href="https://github.com/jamedranoa/Cars" target="cars-git">GitHub</a></h3>
+    <p>Game built using <strong>JavaScript</strong> and <strong>Canvas</strong>.
+      Based on Tetris Brick Racing game. Clean and organized <strong>object oriented design</strong>.</p>
+
+    <div class="for-features">
+    <h2>Features</h2>
+    <ul class="features">
+      <li><strong>Vector</strong> class to respresent objects' positions and velocities.
+      </li>
+      
+      <li>Game difficulty change with time</li>
+  
+    </ul>
+    </div>
+
+  </article>
+  
 </div>
 
 
